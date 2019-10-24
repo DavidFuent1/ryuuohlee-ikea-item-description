@@ -6,7 +6,7 @@ import ProductPurchase from './ProductPurchase.jsx';
 import StockCheck from './StockCheck.jsx';
 
 
-class App extends React.Component {
+class ItemDescription extends React.Component {
   constructor(props) {
     super(props);
 
@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('api/products')
+    fetch('http://localhost:9000/api/products')
       .then((productList) => productList.json())
       .then((productList) => this.setState({ productList }))
       .then(this.handleProduct);
@@ -93,4 +93,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ItemDescription;

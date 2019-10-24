@@ -1,6 +1,7 @@
 // server that connects client and database
 
 // requirements
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const controller = require('./controller.js');
@@ -9,6 +10,7 @@ const app = express();
 const port = 9000; // lol if you get this we are buds
 
 // Middleware
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('client/dist'));
 
